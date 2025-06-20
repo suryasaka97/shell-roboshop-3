@@ -19,7 +19,7 @@ systemctl start rabbitmq-server &>> $file_path
 validate $? "starting rabbitmq"
 
 
-rabbitmqctl list_users | grep "^roboshop"
+rabbitmqctl list_users | grep "^roboshop" &>>$file_name
 
 if [ $? -ne 0 ]
 then
@@ -32,7 +32,7 @@ then
     rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*" &>> $file_path
     validate $? "settingup permissions"
 else
-    "rabbitmq roboshop user already exists"
+   echo -e  "rabbitmq roboshop user $Y already exists$N"
 fi    
 
 print_time
