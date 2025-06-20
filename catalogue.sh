@@ -1,6 +1,6 @@
 #!/bin/bash
 
-application="catalogue.sh"
+application="catalogue"
 
 source ./common.sh
 
