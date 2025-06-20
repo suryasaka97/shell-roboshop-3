@@ -94,6 +94,6 @@ systemd_setup() {
 
 print_time() {
     End_time=$(date +%s)
-    TOTAL_TIME=$(($End_time-$START_TIME))
+    TOTAL_TIME=$(($End_time-$start_time))
     echo -e "Time taken to run this script is : $G $TOTAL_TIME $N seconds" | tee -a $file_path
 }
